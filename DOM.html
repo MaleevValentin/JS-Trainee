@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM</title>
+</head>
+<body>
+  <h1 id="main-heading">Hello, world!!!!</h1>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js""></script>
+  <script>
+    // var headingElement = document.getElementById("main-heading");
+    // console.log(headingElement.innerHTML);
+    // var newHeadingElement = prompt("Print new heading");
+    // headingElement.innerHTML = newHeadingElement;
+
+    // $("#main-heading").text("Forza Juve!!!!").fadeOut(3000);
+    // $("#main-heading").fadeIn(3000);
+    // $("p").hide(3000);
+    // $("p").show(3000);
+
+    // $("#main-heading").text("My friends");
+    // var friends = ["Alex", "Misha", "Dmitro", "Pavel"];
+    // for(var i = 0; i < friends.length; i++) {
+    //   $("body").append("<p>" + friends[i] + "</p>");
+    // }
+    // $("p").append(" лучший").hide().fadeIn(4000);
+    
+    // var fadeTime;
+    // for(var i = 0; i < 5; i++) {
+    //   fadeTime = (i + 1) * 1000;
+    //   $("#main-heading").fadeOut(fadeTime / 2).fadeIn(fadeTime / 2);
+    // }
+
+    // $("h1").fadeOut(3000).delay(5000).fadeIn(3000);
+
+    $("h1").fadeTo(2000, 0.2);
+  </script>
+</body>
+</html>
