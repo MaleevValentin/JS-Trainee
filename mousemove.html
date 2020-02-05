@@ -26,27 +26,51 @@
       //   });
       // });
 
+      // var offsetLeft = 0;
+      // var offsetTop = 0;
+      // var moveHeading = function() {
+      //   if (offsetLeft <= 200 && offsetTop <= 0) {
+      //     $("#heading").offset({ left: offsetLeft++ });
+      //   } else if (offsetLeft >= 200 && offsetTop <= 200) {
+      //     $("#heading").offset({ top: offsetTop++ });
+      //   } else if (offsetLeft > 0 && offsetTop >= 200) {
+      //     $("#heading").offset({ left: offsetLeft-- });
+      //   } else if (offsetLeft <= 0 && offsetTop > 0) {
+      //     $("#heading").offset({ top: offsetTop-- });
+      //   }
+      // };
+      // var intervalId = setInterval(moveHeading, 15);
+      // $("#heading").click(function() {
+      //   clearInterval(intervalId);
+      // });
+
       var offsetLeft = 0;
       var offsetTop = 0;
-
+      var clicks = 0;
+      var interval = 120;
       var moveHeading = function() {
-        if (offsetLeft <= 200 && offsetTop <= 0) {
-          $("#heading").offset({left: offsetLeft++});
-
+        if (offsetLeft < 200 && offsetTop <= 0) {
+          $("#heading").offset({ left: offsetLeft++ });
         } else if (offsetLeft >= 200 && offsetTop <= 200) {
-          $("#heading").offset({top: offsetTop++});
-
+          $("#heading").offset({ top: offsetTop++ });
         } else if (offsetLeft > 0 && offsetTop >= 200) {
-          $("#heading").offset({left: offsetLeft--});
-
+          $("#heading").offset({ left: offsetLeft-- });
         } else if (offsetLeft <= 0 && offsetTop > 0) {
-          $("#heading").offset({top: offsetTop--});
-
+          $("#heading").offset({ top: offsetTop-- });
         }
       };
-      
-      var intervalId = setInterval(moveHeading, 15);
-      $("#heading").click(clearInterval(intervalId));
+      var intervalId = setInterval(moveHeading, interval);
+      $("#heading").click(function() {
+        clearInterval(intervalId);
+        interval /= 2;
+        clicks++;
+
+        if (clicks > 10) {
+          $("#heading").text("Вы победили!!!!");
+        } else {
+          intervalId = setInterval(moveHeading, interval);
+        }
+      });
     </script>
   </body>
 </html>
