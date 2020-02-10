@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+    //   var speak = function() {
+    //     console.log(this.sound + " My name " + this.name);
+    //   };
+    //   var dog = {
+    //     name: "Оладушек",
+    //     legs: 4,
+    //     isAwesome: true,
+    //     sound: "Bark",
+    //     speak: speak
+    //   };      
+    //   var pig = {
+    //     name: "Bajiu",
+    //     legs: 4,
+    //     isAwesome: true,
+    //     sound: "Hlop",
+    //     speak: speak
+    //   };
+    //  console.log(dog.speak());
+    //  console.log(pig.speak());
+
+      var Car = function(x, y) {
+        this.x = x;
+        this.y = y;
+      };
+      var drawCar = function(car) {
+        var carHTML = '<img src="https://nostarch.com/images/car.png?__cf_chl_captcha_tk__=4a29a2e0c8ee13cd05a89f20c9defb289f6d7f55-1581366198-0-AQdOoSO_G77Y2hLIBvBCgwmDlNX0Ksj0-gerUBC6VvqOSQ5-Sz3l4EFd7mJsx8SUnObr-lYce9dWzmm15nd6bKmVJYHjWPWNFC20R8u6bi-ZjrslPOtMe88zxNyJOSNmj48V-LqM5r69A4TF3FXCLsLYyAkV2nfJbvCOgdYixCPTeky5GFos8ZtUlaMHfJ7UQthw2ejmDCh8_ElDp9OiAKJf7oNAUAcD6iDgBHPaQhBAv5n9EeLz3YNFL-x3UZiNLs8GPw5YoR3PtW9UHf3rde0szB8KHoef1cS9Lxx9a9oP7KLhQVXk_uQ3xkZGWk7E-cukaCiC1GT-ybUtm9rD26A">';
+        var carElement = $(carHTML);
+        carElement.css({
+          position: "absolute",
+          left: car.x,
+          top: car.y
+        });
+        $("body").append(carElement);
+      };
+      var tesla = new Car(20, 20);
+      var nissan = new Car(200, 200);
+      drawCar(tesla);
+      drawCar(nissan);
+    </script>
+  </body>
+</html>
