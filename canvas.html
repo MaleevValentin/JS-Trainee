@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="200" height="200"></canvas>
+
+    <script>
+      // var canvas = document.getElementById("canvas");
+      // var ctx = canvas.getContext("2d");
+      // for(var i = 0; i < 8; i++) {
+      //   ctx.fillRect(i * 10, i * 10, 10, 10);
+      // }
+
+      // var canvas = document.getElementById("canvas");
+      // var ctx = canvas.getContext("2d");
+      // ctx.fillStyle = "Yellow";
+      // ctx.fillRect(75, 0, 50, 50);
+      // ctx.fillStyle = "Red";
+      // ctx.fillRect(95, 50, 10, 25);
+      // ctx.fillStyle = "Black";
+      // ctx.fillRect(30, 75, 140, 10);
+      // ctx.fillStyle = "Orange";
+      // ctx.fillRect(65, 85, 70, 65);
+      // ctx.fillStyle = "Blue";
+      // ctx.fillRect(65, 150, 10, 60);
+      // ctx.fillRect(125, 150, 10, 60);
+
+      // var canvas = document.getElementById("canvas");
+      // var ctx = canvas.getContext("2d");
+      // ctx.fillStyle = "#1E90FF";
+      // ctx.fillRect(10, 5, 50, 100);
+      // ctx.fillStyle = "#7FFF00";
+      // ctx.fillRect(60, 5, 50, 100);
+      // ctx.fillStyle = "#8A2BE2";
+      // ctx.fillRect(110, 5, 50 ,100);
+
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      ctx.strokeStyle = "Red";
+      ctx.lineWidth = 5;
+      ctx.strokeRect(10, 10, 150, 20);
+    </script>
+  </body>
+</html>
