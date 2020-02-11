@@ -11,11 +11,15 @@
       var Car = function(x, y) {
         this.x = x;
         this.y = y;
+
+        this.draw();
+        this.speed = 5;
       };
       Car.prototype.draw = function() {
-        var carHTML = '<img src="https://football.ua/tpl/football/img/header/logo.png">';
+        var carHTML =
+          '<img src="https://football.ua/tpl/football/img/header/logo.png">';
         this.carElement = $(carHTML);
-        this.carElement.css ({
+        this.carElement.css({
           position: "absolute",
           left: this.x,
           top: this.y
@@ -23,8 +27,8 @@
         $("body").append(this.carElement);
       };
 
-      Car.prototype.moveRight = function() {
-        this.x += 5;
+      Car.prototype.moveRight = function(number) {
+        this.x += number;
 
         this.carElement.css ({
           left: this.x,
@@ -32,36 +36,42 @@
         });
       };
 
-      Car.prototype.moveLeft = function() {
-        this.x -= 5;
-        this.carElement.css ({
+      Car.prototype.moveLeft = function(number) {
+        this.x -= number;
+
+        this.carElement.css({
           left: this.x,
           top: this.y
         });
       };
 
-      Car.prototype.moveUp = function() {
-        this.y -= 5;
-        this.carElement.css ({
+      Car.prototype.moveUp = function(number) {
+        this.y -= number;
+
+        this.carElement.css({
           left: this.x,
           top: this.y
         });
       };
 
-      Car.prototype.moveDown = function() {
-        this.y += 5;
-        this.carElement.css ({
+      Car.prototype.moveDown = function(number) {
+        this.y += number;
+
+        this.carElement.css({
           left: this.x,
           top: this.y
         });
       };
-      var tesla = new Car(220, 220);
-      var nissan = new Car(0, 0);
-      tesla.draw();
-      nissan.draw();
-      setInterval(() => {
-        nissan.moveRight()
-      }, 100);
+      var tesla = new Car(0, 20);
+      var nissan = new Car(0, 100);
+
+      setInterval(function() {
+        tesla.moveRight(Math.random() * 5);
+        nissan.moveRight(Math.random() * 5);
+      }, 30);
+      // setInterval(() => {
+      //   nissan.moveRight()
+      // }, 30);
     </script>
   </body>
 </html>
