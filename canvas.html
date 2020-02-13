@@ -6,7 +6,7 @@
     <title>Canvas</title>
   </head>
   <body>
-    <canvas id="canvas" width="200" height="200"></canvas>
+    <canvas id="canvas" width="400" height="400"></canvas>
 
     <script>
       // var canvas = document.getElementById("canvas");
@@ -128,6 +128,64 @@
       // circle(90, 150, 5, true);
       // ctx.fillStyle = "Orange";
       // circle(90, 50, 5, true);
+
+      //Функция, рисующая снеговика
+      // var canvas = document.getElementById("canvas");
+      // var ctx = canvas.getContext("2d");
+      // var circle = function(x, y, radius, fillCircle) {
+      //   ctx.beginPath();
+      //   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+      //   if (fillCircle) {
+      //     ctx.fill();
+      //   } else {
+      //     ctx.stroke();
+      //   }
+      // };
+      // var drawSnowman = function(x, y) {
+      //   ctx.fillStyle = "Black";
+      //   ctx.lineWidth = 4;
+      //   circle(x + 50, y + 110, 40, false);
+      //   circle(x + 50, y + 40, 30, false);
+      //   circle(x + 40, y + 35, 5, true);
+      //   circle(x + 60, y + 35, 5, true);
+      //   circle(x + 50, y + 90, 5, true);
+      //   circle(x + 50, y + 110, 5, true);
+      //   circle(x + 50, y + 130, 5, true);
+      //   ctx.fillStyle = "Orange";
+      //   circle(x + 50, y + 45, 5, true);
+      // };
+      // drawSnowman(0, 0);
+
+      //Рисование по массиву точек
+      var points = [
+        [50, 50],
+        [50, 100],
+        [100, 100],
+        [100, 50],
+        [50, 50]
+      ];
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "Green";
+      var drawPoints = function(points) {
+        ctx.beginPath();
+        ctx.moveTo(points[0][0], points[0][1]);
+        for (var i = 1; i < points.length; i++) {
+          ctx.lineTo(points[i][0], points[i][1]);
+        }
+        ctx.stroke();
+      };
+      var mysteryPoints = [
+        [50, 50],
+        [50, 100],
+        [25, 120],
+        [100, 50],
+        [70, 90],
+        [100, 90],
+        [70, 120]
+      ];
+      drawPoints(mysteryPoints);
     </script>
   </body>
 </html>
