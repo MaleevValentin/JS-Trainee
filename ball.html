@@ -6,49 +6,68 @@
     <title>Прыгающий мяч</title>
   </head>
   <body>
-    <canvas id="canvas" width="200" height="200"></canvas>
+    <canvas id="canvas" width="500" height="300"></canvas>
     <script>
       let Ball = function() {
-        this.x = 100;
-        this.y = 100;
-        this.xSpeed = -2;
-        this.ySpeed = 3;
+        this.x = width / 2;
+        this.y = height / 2;
+        this.xSpeed = Math.random() * 5 - 5;
+        this.ySpeed = Math.random() * 5 - 5;
+        let colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
+        this.color = randomColors(colors);
       };
 
-      let circle = function(x, y, radius, fillCircle) {
+      function randomColors(colors) {
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      let circle = function(x, y, radius, fillCircle, color) {
         ctx.beginPath();
         ctx.arc(x, y, radius, 0, Math.PI * 2, false);
         if (fillCircle) {
+          ctx.fillStyle = color;
           ctx.fill();
         } else {
           ctx.stroke();
         }
       };
+
       Ball.prototype.draw = function() {
-        circle(this.x, this.y, 3, true);
+        circle(this.x, this.y, 3, true, this.color);
       };
+
       Ball.prototype.move = function() {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
       };
+
       Ball.prototype.checkCollision = function() {
-        if (this.x < 0 || this.x > 200) {
+        if (this.x < 0 || this.x > width) {
           this.xSpeed = -this.xSpeed;
         }
-        if (this.y < 0 || this.y > 200) {
+        if (this.y < 0 || this.y > height) {
           this.ySpeed = -this.ySpeed;
         }
       };
 
-      let canvas = document.~getElementById("canvas");
+      let canvas = document.getElementById("canvas");
       let ctx = canvas.getContext("2d");
-      let ball = new Ball();
+      let width = canvas.width;
+      let height = canvas.height;
+
+      let balls = [];
+      for (let i = 0; i < 10; i++) {
+        balls[i] = new Ball();
+      }
+
       setInterval(function() {
-        ctx.clearRect(0, 0, 200, 200);
-        ball.draw();
-        ball.move();
-        ball.checkCollision();
-        ctx.strokeRect(0, 0, 200, 200);
+        ctx.clearRect(0, 0, width, height);
+        for (let j = 0; j < balls.length; j++) {
+          balls[j].draw();
+          balls[j].move();
+          balls[j].checkCollision();
+        }
+        ctx.strokeRect(0, 0, width, height);
       }, 30);
     </script>
   </body>
