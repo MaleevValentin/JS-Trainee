@@ -6,17 +6,18 @@
     <title>Canvas</title>
   </head>
   <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="canvas" width="200" height="200"></canvas>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
-      // for(var i = 0; i < 8; i++) {
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
+      // for(let i = 0; i < 8; i++) {
       //   ctx.fillRect(i * 10, i * 10, 10, 10);
       // }
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
       // ctx.fillStyle = "Yellow";
       // ctx.fillRect(75, 0, 50, 50);
       // ctx.fillStyle = "Red";
@@ -29,8 +30,8 @@
       // ctx.fillRect(65, 150, 10, 60);
       // ctx.fillRect(125, 150, 10, 60);
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
       // ctx.fillStyle = "#1E90FF";
       // ctx.fillRect(10, 5, 50, 100);
       // ctx.fillStyle = "#7FFF00";
@@ -38,14 +39,14 @@
       // ctx.fillStyle = "#8A2BE2";
       // ctx.fillRect(110, 5, 50 ,100);
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
       // ctx.strokeStyle = "Red";
       // ctx.lineWidth = 5;
       // ctx.strokeRect(10, 10, 150, 20);
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
       // ctx.strokeStyle = "Turquoise";
       // ctx.lineWidth = 4;
       // ctx.beginPath();
@@ -55,25 +56,27 @@
       // ctx.lineTo(10, 60);
       // ctx.stroke();
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
-      // ctx.lineWidth = 4;
-      // ctx.strokeRect(90, 10, 20, 20);
-      // ctx.beginPath();
-      // ctx.moveTo(100, 30);
-      // ctx.lineTo(100, 70);
-      // ctx.moveTo(100, 70);
-      // ctx.lineTo(80, 90);
-      // ctx.moveTo(100, 70);
-      // ctx.lineTo(120, 90);
-      // ctx.moveTo(100, 50);
-      // ctx.lineTo(80, 40);
-      // ctx.moveTo(100, 50);
-      // ctx.lineTo(120, 40);
-      // ctx.stroke();
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+      ctx.lineWidth = 2;
+      ctx.strokeRect(50, 0, 100, 100);
+      ctx.lineWidth = 4;
+      ctx.strokeRect(90, 10, 20, 20);
+      ctx.beginPath();
+      ctx.moveTo(100, 30);
+      ctx.lineTo(100, 70);
+      ctx.moveTo(100, 70);
+      ctx.lineTo(80, 90);
+      ctx.moveTo(100, 70);
+      ctx.lineTo(120, 90);
+      ctx.moveTo(100, 50);
+      ctx.lineTo(80, 40);
+      ctx.moveTo(100, 50);
+      ctx.lineTo(120, 40);
+      ctx.stroke();
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
       // ctx.fillStyle = "Blue";
       // ctx.beginPath();
       // ctx.moveTo(100, 100);
@@ -84,17 +87,17 @@
       // ctx.lineTo(100, 100);
       // ctx.fill();
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
       // // ctx.lineWidth = 5;
       // ctx.strokeStyle = "Pink";
       // ctx.beginPath();
       // ctx.arc(50, 50, 20, 0, Math.PI, false);
       // ctx.stroke();
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
-      // var circle  = function (x, y, radius, fillCircle) {
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
+      // let circle  = function (x, y, radius, fillCircle) {
       //   ctx.beginPath();
       //   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
       //   if(fillCircle === true) {
@@ -107,9 +110,9 @@
       // ctx.fillStyle = "Red";
       // circle(100, 100, 20, true);
 
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
-      // var circle = function (x, y, radius, fillCircle) {
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
+      // let circle = function (x, y, radius, fillCircle) {
       //   ctx.beginPath();
       //   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
       //   if (fillCircle) {
@@ -130,9 +133,9 @@
       // circle(90, 50, 5, true);
 
       //Функция, рисующая снеговика
-      // var canvas = document.getElementById("canvas");
-      // var ctx = canvas.getContext("2d");
-      // var circle = function(x, y, radius, fillCircle) {
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
+      // let circle = function(x, y, radius, fillCircle) {
       //   ctx.beginPath();
       //   ctx.arc(x, y, radius, 0, Math.PI * 2, false);
       //   if (fillCircle) {
@@ -141,7 +144,7 @@
       //     ctx.stroke();
       //   }
       // };
-      // var drawSnowman = function(x, y) {
+      // let drawSnowman = function(x, y) {
       //   ctx.fillStyle = "Black";
       //   ctx.lineWidth = 4;
       //   circle(x + 50, y + 110, 40, false);
@@ -157,35 +160,45 @@
       // drawSnowman(0, 0);
 
       //Рисование по массиву точек
-      var points = [
-        [50, 50],
-        [50, 100],
-        [100, 100],
-        [100, 50],
-        [50, 50]
-      ];
-      var canvas = document.getElementById("canvas");
-      var ctx = canvas.getContext("2d");
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = "Green";
-      var drawPoints = function(points) {
-        ctx.beginPath();
-        ctx.moveTo(points[0][0], points[0][1]);
-        for (var i = 1; i < points.length; i++) {
-          ctx.lineTo(points[i][0], points[i][1]);
-        }
-        ctx.stroke();
-      };
-      var mysteryPoints = [
-        [50, 50],
-        [50, 100],
-        [25, 120],
-        [100, 50],
-        [70, 90],
-        [100, 90],
-        [70, 120]
-      ];
-      drawPoints(mysteryPoints);
+      // let points = [
+      //   [50, 50],
+      //   [50, 100],
+      //   [100, 100],
+      //   [100, 50],
+      //   [50, 50]
+      // ];
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
+      // ctx.lineWidth = 2;
+      // ctx.strokeStyle = "Green";
+      // let drawPoints = function(points) {
+      //   ctx.beginPath();
+      //   ctx.moveTo(points[0][0], points[0][1]);
+      //   for (let i = 1; i < points.length; i++) {
+      //     ctx.lineTo(points[i][0], points[i][1]);
+      //   }
+      //   ctx.stroke();
+      // };
+      // let mysteryPoints = [
+      //   [50, 50],
+      //   [50, 100],
+      //   [25, 120],
+      //   [100, 50],
+      //   [70, 90],
+      //   [100, 90],
+      //   [70, 120]
+      // ];
+      // drawPoints(mysteryPoints);
+
+      //Рисование мышкой
+      // let canvas = document.getElementById("canvas");
+      // let ctx = canvas.getContext("2d");
+      // ctx.strokeRect(0, 0, 200, 200);
+      // $("canvas").mousemove(function(event) {
+      //   ctx.beginPath();
+      //   ctx.arc(event.offsetX, event.offsetY, 3, Math.PI * 2, false);
+      //   ctx.stroke();
+      // });
     </script>
   </body>
 </html>
