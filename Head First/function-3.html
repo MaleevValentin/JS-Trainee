@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function-3</title>
+  </head>
+  <body>
+    <script>
+      let passengers = [
+        { name: "Jane Doloop", paid: true, ticket: "coach" },
+        { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+        { name: "Sue Property", paid: false, ticket: "thirdclass" },
+        { name: "John Funcall", paid: true, ticket: "coach" }
+      ];
+
+      function createDrinkOrder(passenger) {
+        let orderFunction;
+        if (passenger.ticket === "firstclass") {
+          orderFunction = function() {
+            alert("Would you like a cocktail or wine?");
+          };
+        } else if (passenger.ticket === "thirdclass") {
+          orderFunction = function() {
+            alert("Your choice is cola, water, wine");
+          };
+        } else {
+          orderFunction = function() {
+            alert("Your choice is cola or water.");
+          };
+        }
+        return orderFunction;
+      }
+
+      function createDinnerOrder(passenger) {
+        let orderFunction;
+        if (passenger.ticket === "firstclass") {
+          orderFunction = function() {
+            alert("chicken or pasta");
+          };
+        } else if (passenger.ticket === "thirdclass") {
+          orderFunction = function() {
+            alert("cheese");
+          };
+        } else {
+          orderFunction = function() {
+            alert("nuts");
+          };
+        }
+        return orderFunction;
+      }
+
+      function serveCustomer(passenger) {
+        let getDrinkOrderFunction = createDrinkOrder(passenger);
+        let getDinnerOrderFunction = createDinnerOrder(passenger);
+        getDrinkOrderFunction();
+        getDinnerOrderFunction();
+      }     
+
+      function servePassengers(passengers) {
+        for (let i = 0; i < passengers.length; i++) {
+          serveCustomer(passengers[i]);
+        }
+      }
+
+      servePassengers(passengers);
+    </script>
+  </body>
+</html>

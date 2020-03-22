@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function-6</title>
+  </head>
+  <body>
+    <script>
+      function makeCounter() {
+        let count = 0;
+        function counter() {
+          count += 1;
+          return count;
+        }
+        return counter;
+      }
+      let deCount = makeCounter();
+      console.log(deCount());
+      console.log(deCount());
+      console.log(deCount());
+
+      function makePassword(password) {
+        return function guess(passwordGuess) {
+          return (passwordGuess === password);
+        };
+      }
+      let tryGuess = makePassword("secret");
+      console.log(tryGuess("nope"));
+      console.log(tryGuess("secret"));
+
+      function multN(n) {
+        return function result(x) {
+          return x * n;
+        };
+      }
+      let num = multN(2);
+      console.log(num(5));
+
+      
+    </script>
+  </body>
+</html>

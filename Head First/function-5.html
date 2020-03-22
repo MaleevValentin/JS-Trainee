@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function-5</title>
+  </head>
+  <body>
+    <script>
+      let migrating = true;
+      let fly = function(num) {
+        let sound = "Flying";
+        function wingFlapper() {
+          console.log(sound);
+        }
+        for (let i = 0; i < num; i++) {
+          wingFlapper();
+        }
+      };
+      function quack(num) {
+        let sound = "Quack";
+        let quacker = function() {
+          console.log(sound);
+        };
+        for (let i = 0; i < num; i++) {
+          quacker();
+        }
+      }
+      if (migrating) {
+        quack(4);
+        fly(4);
+      }
+
+      let secret = "007";
+      function getSecret() {
+        let secret = "008";
+        function getValue() {
+          return secret;
+        }
+        return getValue();
+      }
+      console.log(getSecret());
+
+      function getSecret() {
+        let secret = "008";
+        function getValue() {
+          return secret;
+        }
+        return getValue();
+      }
+      let getValueFun = getSecret();
+      console.log(getValueFun);
+
+      let justAVar = "Juventus";
+      // function whereAreYou() {
+      //   let justAVar = "Forza";
+      //   return justAVar;
+      // }
+      // let result = whereAreYou();
+      // console.log(result);
+
+      // function whereAreYou() {
+      //   let justAVar = "Forza";
+      //   function inner() {
+      //     return justAVar;
+      //   }
+      //   return inner();
+      // }
+      // console.log(result);
+
+      function whereAreYou() {
+        let justAVar = "Forza";
+        function inner() {
+          return justAVar;
+        }
+        return inner;
+      }
+      let innerFunction = whereAreYou();
+      let result = innerFunction();
+      console.log(result);
+    </script>
+  </body>
+</html>

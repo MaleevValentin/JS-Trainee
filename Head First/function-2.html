@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function-2</title>
+  </head>
+  <body>
+    <script>
+      let passengers = [
+        { name: "Jane Doloop", paid: true },
+        { name: "Dr. Evel", paid: true },
+        { name: "Sue Property", paid: false },
+        { name: "John Funcall", paid: true }
+      ];
+
+      function processPassengers(passengers, testFunction) {
+        for (let i = 0; i < passengers.length; i++) {
+          if (testFunction(passengers[i])) {
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      function printPassenger(passenger) {
+        let message = passenger.name;
+        if (passenger.paid === true) {
+          message = message + " has paid";
+        } else {
+          message = message + " has not paid";
+        }
+        console.log(message);
+        return false;
+      }
+
+      processPassengers(passengers, printPassenger);
+    </script>
+  </body>
+</html>
