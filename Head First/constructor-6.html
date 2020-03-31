@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let now = new Date();
+      let dateString = now.toString();
+      let theYear = now.getFullYear();
+      let theDayOfWeek = now.getDay();
+      let birthday = new Date("February 19, 1989");
+
+      let emptyArray = new Array();
+      emptyArray[0] = 99;
+      let oddNumbers = new Array(3);
+      oddNumbers[0] = 1;
+      oddNumbers[1] = 3;
+      oddNumbers[2] = 5;
+      oddNumbers.reverse();
+      let aString = oddNumbers.join(" - ");
+      let areAllOdd = oddNumbers.every(function(x) {
+        return ((x % 2) !== 0);
+      });
+
+    </script>
+  </body>
+</html>

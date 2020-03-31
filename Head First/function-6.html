@@ -7,22 +7,22 @@
   </head>
   <body>
     <script>
-      function makeCounter() {
-        let count = 0;
-        function counter() {
-          count += 1;
-          return count;
-        }
-        return counter;
-      }
-      let deCount = makeCounter();
-      console.log(deCount());
-      console.log(deCount());
-      console.log(deCount());
+      // function makeCounter() {
+      //   let count = 0;
+      //   function counter() {
+      //     count += 1;
+      //     return count;
+      //   }
+      //   return counter;
+      // }
+      // let deCount = makeCounter();
+      // console.log(deCount());
+      // console.log(deCount());
+      // console.log(deCount());
 
       function makePassword(password) {
         return function guess(passwordGuess) {
-          return (passwordGuess === password);
+          return passwordGuess === password;
         };
       }
       let tryGuess = makePassword("secret");
@@ -37,7 +37,19 @@
       let num = multN(2);
       console.log(num(5));
 
-      
+      function makeCounter() {
+        let count = 0;
+        return {
+          increment: function() {
+            count++;
+            return count;
+          }
+        };
+      }
+      let counter = makeCounter();
+      console.log(counter.increment());
+      console.log(counter.increment());
+      console.log(counter.increment());
     </script>
   </body>
 </html>
